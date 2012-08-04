@@ -81,13 +81,18 @@ name = "Bob"
 console.log name isnt "James"
 console.log name is "Bob"
 console.log name is not "Bob"
-console.log "This one is using: is not - which ends up making everything false dammit!"
+console.log "This one is using: is not - which ends up making everything false dammit!\n"
 console.log not "1" # note that not ANYTHING will just be false! so isnt and is not work out to one always being false! AVOID!
 
-#
+# and and or alaises!
 
+if true and true
+	console.log "True and true is really true!\n"
 
+if false or true
+	console.log "One of these was true!\n"
 
+# 
 
 
 

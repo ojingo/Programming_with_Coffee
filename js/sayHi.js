@@ -83,8 +83,16 @@
 
   console.log(name === !"Bob");
 
-  console.log("This one is using: is not - which ends up making everything false dammit!");
+  console.log("This one is using: is not - which ends up making everything false dammit!\n");
 
   console.log(!"1");
+
+  if (true && true) {
+    console.log("True and true is really true!\n");
+  }
+
+  if (false || true) {
+    console.log("One of these was true!\n");
+  }
 
 }).call(this);
