@@ -49,6 +49,47 @@ console.log x?
 console.log "Does text exist?\n"
 console.log text?
 
-console.log(doIexist?)
+console.log (doIexist?) + "\n"
+
+# using isnt not and avoiding is not!
+
+name = "mark"
+
+console.log "The name is: #{name}!\n"
+console.log "Is it mark?\n"
+console.log name is "mark"
+console.log "It isnt Bob?\n"
+console.log name isnt "Bob"
+
+# ok now not and the differnce between !x, not x, is not x
+
+userExists = false
+
+if not userExists
+	console.log "The user does NOT exist!"
+
+if userExists is false
+	console.log "The userExists is FALSE is easier to write!"
+
+if userExists?
+	console.log "The userExists variable is existential!"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

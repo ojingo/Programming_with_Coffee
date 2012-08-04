@@ -7,7 +7,7 @@
 
 
 (function() {
-  var day, field, field2, someId, someName, someValue, text;
+  var day, field, field2, name, someId, someName, someValue, text, userExists;
 
   this.sayhi = function() {
     return console.log("Hello with an @ sign used!");
@@ -47,6 +47,32 @@
 
   console.log(text != null);
 
-  console.log(typeof doIexist !== "undefined" && doIexist !== null);
+  console.log((typeof doIexist !== "undefined" && doIexist !== null) + "\n");
+
+  name = "mark";
+
+  console.log("The name is: " + name + "!\n");
+
+  console.log("Is it mark?\n");
+
+  console.log(name === "mark");
+
+  console.log("It isnt Bob?\n");
+
+  console.log(name !== "Bob");
+
+  userExists = false;
+
+  if (!userExists) {
+    console.log("The user does NOT exist!");
+  }
+
+  if (userExists === false) {
+    console.log("The userExists is FALSE is easier to write!");
+  }
+
+  if (userExists != null) {
+    console.log("The userExists variable is existential!");
+  }
 
 }).call(this);
