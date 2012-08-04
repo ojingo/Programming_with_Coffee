@@ -74,8 +74,17 @@ if userExists is false
 if userExists?
 	console.log "The userExists variable is existential!"
 
+# watch how this renders in jscript! foo baah.
 
+name = "Bob"
 
+console.log name isnt "James"
+console.log name is "Bob"
+console.log name is not "Bob"
+console.log "This one is using: is not - which ends up making everything false dammit!"
+console.log not "1" # note that not ANYTHING will just be false! so isnt and is not work out to one always being false! AVOID!
+
+#
 
 
 

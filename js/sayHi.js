@@ -75,4 +75,16 @@
     console.log("The userExists variable is existential!");
   }
 
+  name = "Bob";
+
+  console.log(name !== "James");
+
+  console.log(name === "Bob");
+
+  console.log(name === !"Bob");
+
+  console.log("This one is using: is not - which ends up making everything false dammit!");
+
+  console.log(!"1");
+
 }).call(this);
