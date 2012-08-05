@@ -214,17 +214,55 @@ myFunction()
 
 # () are optional? but I don't like that... its not readable!
 myNoFunction = ->
-	console.log "Doing something else here..."
+	console.log "Doing something else here...\n"
 
 # but NOT optional here!
 myNoFunction()
 
 # return null or undefined on last line if you don't want them to send anything back!
 
+# more function details
 
+calculateTotal = (subTotal, rate) ->
+	tax = subTotal * rate
+	return subTotal + tax
 
+console.log calculateTotal(100, .0875)
 
+# you can leave off the damn paranthesis but I don't like it! and you can leave out the return!
 
+calculateTotal = (subTotal, rate) ->
+	tax = subTotal * rate
+	subTotal + tax
+
+console.log calculateTotal 100, .0875
+
+# default argument can be set whilst going in
+
+calculateTotal = (subTotal, rate = .05) ->
+	tax = subTotal * rate
+	return subTotal + tax
+
+console.log calculateTotal(100)
+
+# argument can default to other argument!
+
+href = (text, url = text) ->
+	html = "<a href='#{url}'>#{text}</a>"
+	return html
+
+console.log href("Click Here", "http://www.example.com")
+console.log href("http://www.example.com")
+
+# default now becomes call function from argument? ok now were gettign silly...
+
+defaulTaxRate = -> .05
+
+calculateTotal = (subTotal, rate = defaulTaxRate()) ->
+	tax = subTotal * rate
+	return subTotal + tax
+
+console.log calculateTotal(100)
 
 
 

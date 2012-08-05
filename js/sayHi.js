@@ -7,7 +7,7 @@
 
 
 (function() {
-  var calculateTotal, day, defaulTaxRate, field, field2, light, myAnswer, myFunction, myNoFunction, name, object, purchases, someId, someName, someValue, text, today, userExists;
+  var calculateTotal, day, defaulTaxRate, field, field2, href, light, myAnswer, myFunction, myNoFunction, name, object, purchases, someId, someName, someValue, text, today, userExists;
 
   this.sayhi = function() {
     return console.log("Hello with an @ sign used!");
@@ -231,9 +231,64 @@
   myFunction();
 
   myNoFunction = function() {
-    return console.log("Doing something else here...");
+    return console.log("Doing something else here...\n");
   };
 
   myNoFunction();
+
+  calculateTotal = function(subTotal, rate) {
+    var tax;
+    tax = subTotal * rate;
+    return subTotal + tax;
+  };
+
+  console.log(calculateTotal(100, .0875));
+
+  calculateTotal = function(subTotal, rate) {
+    var tax;
+    tax = subTotal * rate;
+    return subTotal + tax;
+  };
+
+  console.log(calculateTotal(100, .0875));
+
+  calculateTotal = function(subTotal, rate) {
+    var tax;
+    if (rate == null) {
+      rate = .05;
+    }
+    tax = subTotal * rate;
+    return subTotal + tax;
+  };
+
+  console.log(calculateTotal(100));
+
+  href = function(text, url) {
+    var html;
+    if (url == null) {
+      url = text;
+    }
+    html = "<a href='" + url + "'>" + text + "</a>";
+    return html;
+  };
+
+  console.log(href("Click Here", "http://www.example.com"));
+
+  console.log(href("http://www.example.com"));
+
+  defaulTaxRate = function() {
+    return .05;
+  };
+
+  calculateTotal = function(subTotal, rate) {
+    var tax;
+    if (rate == null) {
+      rate = defaulTaxRate();
+    }
+    tax = subTotal * rate;
+    return subTotal + tax;
+  };
+
+  console.log(calculateTotal(100));
 
 }).call(this);
