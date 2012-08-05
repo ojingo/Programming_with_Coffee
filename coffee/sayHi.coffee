@@ -92,7 +92,153 @@ if true and true
 if false or true
 	console.log "One of these was true!\n"
 
+# yes on off no!
+
+myAnswer = true
+console.log myAnswer is yes
+console.log myAnswer is true
+
+light = true
+console.log light is on
+console.log light is true
+
+myAnswer = false
+console.log myAnswer is no
+console.log myAnswer is false
+
+light = false
+console.log light is off
+console.log light is false
+
+# @alias is this
+
+object = {
+	name: 'Mark'
+	sayHello: -> 
+		console.log "Hello #{ @name}"
+}
+object.sayHello()
+# now @name is out of scope! undefined!
+console.log @name
+# inside the object{} the @name property was within scope and is able to be referenced this.name = @name
+
+# if 
+
+if true
+	console.log "The statement was true!\n"
+
+today = "Sunday"
+if today is "Sunday"
+	console.log "Today is Sunday!\n"
+
+# if else
+
+today = "Tuesday"
+if today is "Monday"
+	console.log "Today is Monday\n"
+else
+	console.log "Today is not Monday\n"
+
+# more if else
+today = "Sunday"
+
+if today is "Saturday"
+	console.log "Here are your toDos!"
+else if today is "Sunday"
+	console.log "Take a break!\n"
+else
+	console.log "GET TO WORK!\n"
+
+# unless
+today = "Monday"
+
+unless today is "Sunday"
+	console.log "Get to work you lazy fucking bastard!"
+
+if today isnt "Sunday"
+	console.log "Its not Sunday - so get to work!\n"
+
+# switch
+today = "Sunday"
+
+switch today
+	when "Saturday"
+		console.log "Here are your toDos! for #{today}"
+	when "Sunday"
+		console.log "Its #{today} take a break or go to church!"
+	else
+		console.log "It's #{today} get to work you lazy fool!\n"
+
+# swith with multiple in line items
+today = "Monday"
+
+switch today
+  when "Sunday", "Saturday"
+  	console.log "Have a nice weekend!"
+  else
+  	console.log "Off to work you go!\n"
+
 # 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

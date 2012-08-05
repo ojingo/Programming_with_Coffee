@@ -7,7 +7,7 @@
 
 
 (function() {
-  var day, field, field2, name, someId, someName, someValue, text, userExists;
+  var day, field, field2, light, myAnswer, name, object, someId, someName, someValue, text, today, userExists;
 
   this.sayhi = function() {
     return console.log("Hello with an @ sign used!");
@@ -93,6 +93,103 @@
 
   if (false || true) {
     console.log("One of these was true!\n");
+  }
+
+  myAnswer = true;
+
+  console.log(myAnswer === true);
+
+  console.log(myAnswer === true);
+
+  light = true;
+
+  console.log(light === true);
+
+  console.log(light === true);
+
+  myAnswer = false;
+
+  console.log(myAnswer === false);
+
+  console.log(myAnswer === false);
+
+  light = false;
+
+  console.log(light === false);
+
+  console.log(light === false);
+
+  object = {
+    name: 'Mark',
+    sayHello: function() {
+      return console.log("Hello " + this.name);
+    }
+  };
+
+  object.sayHello();
+
+  console.log(this.name);
+
+  if (true) {
+    console.log("The statement was true!\n");
+  }
+
+  today = "Sunday";
+
+  if (today === "Sunday") {
+    console.log("Today is Sunday!\n");
+  }
+
+  today = "Tuesday";
+
+  if (today === "Monday") {
+    console.log("Today is Monday\n");
+  } else {
+    console.log("Today is not Monday\n");
+  }
+
+  today = "Sunday";
+
+  if (today === "Saturday") {
+    console.log("Here are your toDos!");
+  } else if (today === "Sunday") {
+    console.log("Take a break!\n");
+  } else {
+    console.log("GET TO WORK!\n");
+  }
+
+  today = "Monday";
+
+  if (today !== "Sunday") {
+    console.log("Get to work you lazy fucking bastard!");
+  }
+
+  if (today !== "Sunday") {
+    console.log("Its not Sunday - so get to work!\n");
+  }
+
+  today = "Sunday";
+
+  switch (today) {
+    case "Saturday":
+      console.log("Here are your toDos! for " + today);
+      break;
+    case "Sunday":
+      console.log("Its " + today + " take a break or go to church!");
+      break;
+    default:
+      console.log("It's " + today + " get to work you lazy fool!\n");
+  }
+
+  today = "Monday";
+
+  switch (today) {
+    case "Sunday":
+    case "Saturday":
+      console.log("Have a nice weekend!");
+      break;
+    default:
+      console.log("Off to work you go!\n");
   }
 
 }).call(this);
