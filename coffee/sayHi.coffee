@@ -178,7 +178,49 @@ switch today
   else
   	console.log "Off to work you go!\n"
 
-# 
+# functions!
+
+defaulTaxRate = .0625
+
+console.log "The tax rate here is #{defaulTaxRate}!"
+
+calculateTotal = (subTotal, rate = defaulTaxRate) ->
+	console.log "The tax rate here is #{rate}!"
+	tax = subTotal * rate
+	return subTotal + tax
+
+purchases = 100
+
+console.log "What is the total for #{purchases} dollars in purchases?"
+console.log "Total plus tax is #{calculateTotal(purchases)}"
+
+purchases = 200
+
+console.log "What is the total for #{purchases} dollars in purchases?"
+console.log "Total plus tax is #{calculateTotal(purchases)}"
+
+purchases = 300
+
+console.log "What is the total for #{purchases} dollars in purchases?"
+console.log "Total plus tax is #{calculateTotal(purchases, .075)}\n"
+
+# more function basics
+# there is a hidden return line automagically placed for you...last line
+
+myFunction = () ->
+	console.log "Do something in here!"
+
+myFunction()
+
+# () are optional? but I don't like that... its not readable!
+myNoFunction = ->
+	console.log "Doing something else here..."
+
+# but NOT optional here!
+myNoFunction()
+
+# return null or undefined on last line if you don't want them to send anything back!
+
 
 
 

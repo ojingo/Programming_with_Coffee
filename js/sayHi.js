@@ -7,7 +7,7 @@
 
 
 (function() {
-  var day, field, field2, light, myAnswer, name, object, someId, someName, someValue, text, today, userExists;
+  var calculateTotal, day, defaulTaxRate, field, field2, light, myAnswer, myFunction, myNoFunction, name, object, purchases, someId, someName, someValue, text, today, userExists;
 
   this.sayhi = function() {
     return console.log("Hello with an @ sign used!");
@@ -191,5 +191,49 @@
     default:
       console.log("Off to work you go!\n");
   }
+
+  defaulTaxRate = .0625;
+
+  console.log("The tax rate here is " + defaulTaxRate + "!");
+
+  calculateTotal = function(subTotal, rate) {
+    var tax;
+    if (rate == null) {
+      rate = defaulTaxRate;
+    }
+    console.log("The tax rate here is " + rate + "!");
+    tax = subTotal * rate;
+    return subTotal + tax;
+  };
+
+  purchases = 100;
+
+  console.log("What is the total for " + purchases + " dollars in purchases?");
+
+  console.log("Total plus tax is " + (calculateTotal(purchases)));
+
+  purchases = 200;
+
+  console.log("What is the total for " + purchases + " dollars in purchases?");
+
+  console.log("Total plus tax is " + (calculateTotal(purchases)));
+
+  purchases = 300;
+
+  console.log("What is the total for " + purchases + " dollars in purchases?");
+
+  console.log("Total plus tax is " + (calculateTotal(purchases, .075)) + "\n");
+
+  myFunction = function() {
+    return console.log("Do something in here!");
+  };
+
+  myFunction();
+
+  myNoFunction = function() {
+    return console.log("Doing something else here...");
+  };
+
+  myNoFunction();
 
 }).call(this);
