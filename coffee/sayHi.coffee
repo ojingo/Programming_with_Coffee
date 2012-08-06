@@ -264,6 +264,37 @@ calculateTotal = (subTotal, rate = defaulTaxRate()) ->
 
 console.log calculateTotal(100)
 
+# splats! variable length arguments to a function!
+
+splatter = (etc...) ->
+	console.log "Length: #{etc.length}, Values: #{etc.join(',')}\n"
+
+splatter()
+splatter("a","b","c","d")
+
+# splats in any argument in the list... but only ONE splats per function
+# watch the indents there spanky... just spent 15 minutes trying to figure out whats wrong
+# and it was the damn indents! wtf.
+
+joinArguments = (first, middles..., last) ->
+	parts = []
+
+	if first?
+		parts.push first.toUpperCase()
+
+	for middle in middles
+		parts.push middle.toLowerCase()
+
+	if last?
+		parts.push last.toUpperCase()
+
+	return parts.join('/')
+
+console.log joinArguments("a")
+console.log joinArguments("a","b")
+console.log joinArguments("a","B","C","d")
+
+
 
 
 

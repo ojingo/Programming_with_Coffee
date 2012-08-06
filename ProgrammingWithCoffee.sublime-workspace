@@ -1,0 +1,291 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"defa",
+				"defaulTaxRate"
+			],
+			[
+				"h",
+				"href"
+			],
+			[
+				"cal",
+				"calculateTotal"
+			],
+			[
+				"my",
+				"myNoFunction"
+			],
+			[
+				"tod",
+				"today"
+			],
+			[
+				"S",
+				"Saturday"
+			],
+			[
+				"un",
+				"unless"
+			],
+			[
+				"el",
+				"elif	Else if"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"sa",
+				"sayHello"
+			],
+			[
+				"user",
+				"userExists"
+			],
+			[
+				"some",
+				"someValue"
+			],
+			[
+				"po",
+				"postData"
+			],
+			[
+				"req",
+				"requestHandlers"
+			],
+			[
+				"r",
+				"router"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "coffee/sayHi.coffee",
+			"settings":
+			{
+				"buffer_size": 6066,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/sayHi.js",
+			"settings":
+			{
+				"buffer_size": 6086,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"About"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 371.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/tmacbook/Documents/CODING/Coffee/Programming with Coffee/repl1.coffee",
+		"/Users/tmacbook/Documents/CODING/Coffee/Programming with Coffee/repl1.js",
+		"/Users/tmacbook/Documents/CODING/Coffee/Programming with Coffee/coffee/putstoJSfolder.coffee",
+		"/Users/tmacbook/Documents/CODING/Coffee/Programming with Coffee/coffee/differentCoffee.coffee",
+		"/Users/tmacbook/Documents/CODING/nodeServer/node_modules/formidable/Readme.md",
+		"/Users/tmacbook/Documents/CODING/Meteor/leaderboard/leaderboard.css",
+		"/Users/tmacbook/Documents/CODING/Coffee/first CoffeeScript tests/fib.js",
+		"/Users/tmacbook/Documents/CODING/nodeServer/router.js",
+		"/Users/tmacbook/Documents/CODING/nodeServer/requestHandlers.js",
+		"/Users/tmacbook/Documents/CODING/nodeServer/server.js",
+		"/Users/tmacbook/Documents/CODING/nodeServer/index.js",
+		"/Users/tmacbook/Documents/Coffee/node/router.js",
+		"/Users/tmacbook/Documents/Coffee/node/requestHandlers.js",
+		"/Users/tmacbook/Documents/Coffee/node/server.js",
+		"/Users/tmacbook/Documents/Coffee/node/index.js",
+		"/Users/tmacbook/Documents/Coffee/fib.coffee"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Hello",
+			"name",
+			"/tmp/test.png"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "coffee/sayHi.coffee",
+					"settings":
+					{
+						"buffer_size": 6066,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5995,
+								5995
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CoffeeScript/Syntaxes/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3239.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/sayHi.js",
+					"settings":
+					{
+						"buffer_size": 6086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2920.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true
+}

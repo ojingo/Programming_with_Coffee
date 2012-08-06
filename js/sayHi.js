@@ -7,7 +7,8 @@
 
 
 (function() {
-  var calculateTotal, day, defaulTaxRate, field, field2, href, light, myAnswer, myFunction, myNoFunction, name, object, purchases, someId, someName, someValue, text, today, userExists;
+  var calculateTotal, day, defaulTaxRate, field, field2, href, joinArguments, light, myAnswer, myFunction, myNoFunction, name, object, purchases, someId, someName, someValue, splatter, text, today, userExists,
+    __slice = [].slice;
 
   this.sayhi = function() {
     return console.log("Hello with an @ sign used!");
@@ -290,5 +291,38 @@
   };
 
   console.log(calculateTotal(100));
+
+  splatter = function() {
+    var etc;
+    etc = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+    return console.log("Length: " + etc.length + ", Values: " + (etc.join(',')) + "\n");
+  };
+
+  splatter();
+
+  splatter("a", "b", "c", "d");
+
+  joinArguments = function() {
+    var first, last, middle, middles, parts, _i, _j, _len;
+    first = arguments[0], middles = 3 <= arguments.length ? __slice.call(arguments, 1, _i = arguments.length - 1) : (_i = 1, []), last = arguments[_i++];
+    parts = [];
+    if (first != null) {
+      parts.push(first.toUpperCase());
+    }
+    for (_j = 0, _len = middles.length; _j < _len; _j++) {
+      middle = middles[_j];
+      parts.push(middle.toLowerCase());
+    }
+    if (last != null) {
+      parts.push(last.toUpperCase());
+    }
+    return parts.join('/');
+  };
+
+  console.log(joinArguments("a"));
+
+  console.log(joinArguments("a", "b"));
+
+  console.log(joinArguments("a", "B", "C", "d"));
 
 }).call(this);
