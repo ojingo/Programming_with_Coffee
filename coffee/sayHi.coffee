@@ -293,6 +293,57 @@ joinArguments = (first, middles..., last) ->
 console.log joinArguments("a")
 console.log joinArguments("a","b")
 console.log joinArguments("a","B","C","d")
+console.log ("\n")
+
+# using splats to expand the array into the argument as well
+
+splatter = (etc...) ->
+	console.log "Length: #{etc.length}, Values: #{etc.join(',')}\n"
+
+a = ["a","b","C","D"]
+splatter(a)
+splatter(a...)
+
+# arrays!
+
+myArray = ["a", "b", "C", "d", "E"]
+
+console.log myArray
+
+myStrangeArray = 
+[
+
+	"A"
+	"B"
+	"ERF"
+	"Strange"
+	"F"
+	"G"
+
+]
+
+console.log myStrangeArray
+
+myMatrixArray = 
+[
+	"1","2","3","4"
+	"5","6","7","8"
+	"9","1","2","3"
+]
+
+console.log myMatrixArray
+
+# test for value in an array  ( I wonder how slow this shit is when you have a large damn array? )
+
+myArray = ["a", "b", "C", "d", "E"]
+
+if "b" in myArray
+	console.log "I found b!"
+
+unless "D" in myArray
+	console.log "I can't find D!"
+
+
 
 
 

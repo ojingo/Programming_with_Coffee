@@ -7,8 +7,9 @@
 
 
 (function() {
-  var calculateTotal, day, defaulTaxRate, field, field2, href, joinArguments, light, myAnswer, myFunction, myNoFunction, name, object, purchases, someId, someName, someValue, splatter, text, today, userExists,
-    __slice = [].slice;
+  var a, calculateTotal, day, defaulTaxRate, field, field2, href, joinArguments, light, myAnswer, myArray, myFunction, myMatrixArray, myNoFunction, myStrangeArray, name, object, purchases, someId, someName, someValue, splatter, text, today, userExists,
+    __slice = [].slice,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   this.sayhi = function() {
     return console.log("Hello with an @ sign used!");
@@ -324,5 +325,41 @@
   console.log(joinArguments("a", "b"));
 
   console.log(joinArguments("a", "B", "C", "d"));
+
+  console.log("\n");
+
+  splatter = function() {
+    var etc;
+    etc = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+    return console.log("Length: " + etc.length + ", Values: " + (etc.join(',')) + "\n");
+  };
+
+  a = ["a", "b", "C", "D"];
+
+  splatter(a);
+
+  splatter.apply(null, a);
+
+  myArray = ["a", "b", "C", "d", "E"];
+
+  console.log(myArray);
+
+  myStrangeArray = ["A", "B", "ERF", "Strange", "F", "G"];
+
+  console.log(myStrangeArray);
+
+  myMatrixArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "1", "2", "3"];
+
+  console.log(myMatrixArray);
+
+  myArray = ["a", "b", "C", "d", "E"];
+
+  if (__indexOf.call(myArray, "b") >= 0) {
+    console.log("I found b!");
+  }
+
+  if (__indexOf.call(myArray, "D") < 0) {
+    console.log("I can't find D!");
+  }
 
 }).call(this);
