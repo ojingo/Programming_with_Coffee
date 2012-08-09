@@ -341,7 +341,500 @@ if "b" in myArray
 	console.log "I found b!"
 
 unless "D" in myArray
-	console.log "I can't find D!"
+	console.log "I can't find D!\n"
+
+# swapping array places!
+
+x = "X"
+y = "Y"
+
+console.log "x is #{x}"
+console.log "y is #{y}\n"
+
+[x,y] = [y,x]
+
+console.log "x is #{x}"
+console.log "y is #{y}\n"
+
+# array pass back for data set up
+# first array is formed with number, object, and string
+
+rack = ->
+	[200,{"Content-Type":"text/html"},"Hello Im RACKED!"]
+
+console.log rack()
+
+# now it assigns an array of variables and calls the function rack
+# its almost like its creating a keyvalue pair based on two arrays facing each other?
+
+[status, headers, body] = rack()
+
+# now we print those variables as per assigned via the array
+console.log "Status is #{status}"
+console.log "Headers are #{JSON.stringify(headers)}"
+console.log "Body is #{body}\n"
+
+
+# using SPLATS and reassignment arrays - lets you pull off the ends of ANY variable length send
+
+myArray = ["a", "b", "C", "X", "d", "E", "F"]
+
+[start, middle..., end] = myArray
+
+console.log "start is #{start}"
+console.log "middle is #{middle}"
+console.log "end is #{end}\n"
+
+# when you have more VARIABLES than data?  the last variable has no data assigned to it - and becomes UNDEFINED
+
+myArray = ["a","b"]
+
+[one, two, three] = myArray
+
+console.log "one = #{one}"
+console.log "two = #{two}"
+console.log "three = #{three}\n"
+
+# ranges allow you to create variable arrays with numbers in sequence
+
+# 1 thru 10 --- two dots between
+myRange = [1..10]
+console.log myRange
+
+# 1 thru 10 ---- THREE dots between pay close attention
+# leaves out the last number 10... pay attention for off by one errors!
+myRange = [1...10]
+console.log myRange
+
+# reverse order as well
+myRange = [10..1]
+console.log myRange
+
+myRange = [10...1]
+console.log myRange
+
+# ranges for larger arrays
+myRange = [1..50]
+console.log myRange.join(", ")
+
+# at numbers larger than 22 it begins to build arrays differently 
+# now slicing up arrays into different parts
+
+myArray = [1..10]
+
+firstThree = myArray[0..2]
+console.log firstThree
+firstFour = myArray[0..3]
+console.log firstFour
+
+middleArray = myArray[2..4]
+console.log middleArray
+
+# we can replace parts of an array by partial pointing
+myArray = [1..10]
+myArray[4..7] = ['a','b','c','d']
+console.log myArray
+
+# inject values into array - means APPEND into array - add them anywhere into the array
+myArray = [1..10]
+myArray[4..-1] = ['a','b','c','d']
+console.log myArray
+
+# OBJECTS!
+
+obj = {}
+console.log obj
+
+# objects are basically key-value pairs... also called HASHES in other languages.
+# no brackets needed, no commas needed, just keyvalue pairing
+obj = 
+	firstName: "TJ"
+	lastName: "Marbois"
+
+console.log obj
+
+# on one line
+obj = {firstName:"Yulia",lastName:"Komisar"}
+console.log obj
+
+# now adding a fucntion to that object
+# this function returns string that expands from the internal variabls of this object (@ = this)
+obj = 
+	firstName: "TJ"
+	lastName: "Marbois"
+	sayName: ->
+		"#{@firstName} #{@lastName}"
+
+console.log obj
+console.log obj.sayName()
+
+# using variables to create an object with those variabls as names of keys
+foo = "FOO!"
+bar = "BAR!"
+
+obj =
+	foo: foo
+	bar: bar
+
+console.log obj
+
+#instead you can do this but you MUST use brackets
+
+obj = {
+	foo
+	bar
+}
+
+console.log obj
+
+# defining an object as part of a call to a function ( sending an object thru a function call?)
+myFunction = (optionsSent) ->
+	console.log optionsSent
+
+myFunction(foo: 'FOOl!', bar: 'BAR!')
+
+# getting and setting properties in objects!
+
+obj = 
+	firstName: "John"
+	lastName: "Doe"
+	sayName: ->
+		"#{@firstName} #{@lastName}"
+
+# getting
+console.log obj
+console.log obj.firstName
+console.log obj.sayName()
+console.log obj['lastName']
+console.log obj['firstName']
+console.log obj.lastName
+
+# setting
+obj.firstName = "Jane"
+obj['lastName'] = "Journey"
+console.log obj
+console.log obj.firstName
+console.log obj.lastName
+
+# jslint says use dot notation.... so avoid the stupid array accessor way
+
+# extracting values from objects - I don't understand this part very well... needs reviews
+
+book =
+	title: "Programming with CoffeeScript"
+	author: "Mark Bates"
+	chapter_1:
+		name: "Distributed Node"
+		pageCount: 33
+	chapter_2:
+		name: "The chapter 2"
+		pageCount: 44
+
+{author, chapter_1: {name, pageCount}} = book
+
+console.log "Author #{author}"
+console.log "Chapter 1: #{name}"
+console.log "Page Count: #{pageCount}"
+
+# loops and iterations
+# for loop ( taken from RUBY )
+myLetters = ["a","b","c","d","e"]
+
+for letter in myLetters
+	console.log letter.toUpperCase()
+
+# skip by 2 or by any # desired
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+for letter in letters by 4
+	console.log letter
+
+# when keyword
+a = [1..10]
+
+for num in a
+	if num < 5
+		console.log num
+
+# OR with WHEN
+
+for num in a when num < 5
+	console.log num
+
+# iteration over object keys!
+# call for each KEY - give me back the VALUE of this OBJECT
+# for variableNameOfKeyYouLike, variableNameOfValueYouLike of actualNameofObject
+
+person =
+	firstName: "Mike"
+	lastName: "Rad"
+	weight: 185
+	book: "Red Rose Rumble"
+
+for row, stuff of person
+	console.log "#{row} is #{stuff}"
+
+# iterate over objects with control
+
+for key, value of person when value.length < 5
+	console.log "#{key} is #{value}"
+
+# use prototype to add functions or values to an existing object!
+
+myObject = 
+	name: "Luc Besson"
+
+for key, value of myObject
+	console.log "#{key}: #{value}"
+
+Object.prototype.dob = new Date(1972,7,24)
+
+for key, value of myObject
+	console.log "#{key}: #{value}"
+
+anotherObject =
+		name: "David Lynch"
+
+for key, value of anotherObject
+	console.log "#{key}: #{value}"
+
+# adding own to for own key
+
+myObject = 
+	name: "Stanley Kubrick"
+
+for own key, value of myObject
+	console.log "#{key}: #{value}"
+
+Object.prototype.dob = new Date(1952,4,24)
+
+for own key, value of myObject
+	console.log "#{key}: #{value}"
+
+anotherObject =
+		name: "Akira Kurosawa"
+		dob: new Date(1999,1,1)
+
+for own key, value of anotherObject
+	console.log "#{key}: #{value}\n"
+
+# while loop with a callback
+# the first function asks for number of times to loop 
+# and sends in a callback link
+# you loop by number of times
+# then you call the pointer to the callback input
+# which you also wire as a function and send in INDEX 
+# then when you actually call this function below
+# it takes in 5
+# and sends (index) a un-named function
+# then logs it 
+# now once run - the loop begins
+# it then sends in index++ and places it into the callback(index)
+# callback(index) now maps back to 
+# times 5, (index) -> which maps to
+# times 5, (1) -> which then executes this function(1) = to log 1!
+# when done it returns to callback(index)
+# where the loop continues and this repeats giving us 12345
+
+times = (number_of_times, callback) ->
+	index = 0
+	while index++ < number_of_times
+		callback(index)
+	return null
+
+times 5, (index) ->
+	console.log index
+
+times 6, (index) ->
+	console.log index
+
+# use untill instead now
+
+times = (number_of_times, callback) ->
+	index = 0
+	until index++ >= number_of_times
+		callback(index)
+	return null
+
+times 5, (index) ->
+	console.log index
+
+times 6, (index) ->
+	console.log index
+
+# comprehensions = sticking on loops at the end of a function return....
+
+myLetters = ['a','b','c','c','d','e']
+
+console.log letter.toUpperCase() for letter in myLetters
+
+for letter in myLetters 
+	console.log letter.toLowerCase()
+
+upperLetters = (letter.toUpperCase() for letter in myLetters)
+
+console.log upperLetters
+
+# using do keyword  notice the timer causes this to render AFTER the code below about class!
+###
+for x in [1..5]
+	do (x) ->
+		setTimeout ->
+			console.log x
+		,1
+###
+# blocked it all out because the delay was screwing up my output for stuff below
+
+# classes! javascript has no real class support... coffeescript provides it with some simple add ons
+
+class Employee
+
+	# the constructor function! gets called automagically when new is called
+
+	constructor: () ->
+		Employee.hire(@)
+
+	@hire: (employee) ->
+		@allEmployees ||=[]
+		@allEmployees.push employee
+
+	@total: ->
+		console.log "There are #{@allEmployees.length} employees."
+		@allEmployees.length
+
+
+	dob: (year,month,day) ->
+		@birthDay = new Date(year, month, day)
+
+	printInfo: () ->
+		console.log "My name is: #{@attributes.name}"
+		console.log "I was born on: #{@attributes.birthDay}"
+
+		if @attributes.salary
+			console.log "Salary is: #{@attributes.salary}"
+		else
+			console.log "Salary unknown."
+
+	bonus: ->
+		return 0
+
+
+# class extends!
+
+class Manager extends Employee
+
+	printInfo: () ->
+		super
+		console.log "My bonus is: #{@bonus()}"
+
+	bonus: ->
+		@attributes.salary * .25
+
+	@total: ->
+		console.log "There are 0 managers."
+		# super - CANT CALL THIS OR BOOM = Manager does NOT have access to variables of class Employee!
+
+
+
+
+###
+emp1 = new Employee
+	name:"Bob Marley"
+	birthDay: new Date(1600,0,1)
+	salary: 50000
+
+emp2 = new Employee
+	name: "John Jacob JingleheimerSmith"
+	birthDay: new Date(999,9,9)
+	salary: 45000
+
+manager = new Manager
+	name: "TJ Marbois"
+	birthDay: new Date(1972,5,18)
+	salary: 175000
+###
+
+
+new Employee()
+new Employee()
+new Employee()
+new Employee()
+
+Employee.total()
+Manager.total()
+
+# prototypes
+
+myArray = [1..10]
+
+try
+  console.log myArray.size()
+catch error
+  console.log "Heres the error: #{error}"
+
+# this adds size() to all Arrays - the function takes in nothing but returns @length
+# which I assume is already available internally to Arrays?
+
+ Array::size = -> @length
+ console.log myArray.size()
+
+ myArray.push(11)
+ console.log myArray.size()
+
+# JavaScript is asynchronous - fire and forget vs halt and wait for return.
+
+fire = (msg, wait) ->
+	setTimeout ->
+		console.log "Im firing in timeout! #{msg}"
+	, wait
+
+# disable to continue!
+
+# fire("Hello!", 3000)
+# fire("Goodbye!", 1000)
+
+# callbacks!
+
+class User
+
+	constructor: (@name) ->
+
+# if this function is -> then it cannot access the variables within this class!
+# if this fucntion is => then it CAN access the internal class variables @name
+# they say its BOUND - im still not sure what that means in practice
+# or why you would want an UNBOUND function call?
+
+	sayHi: =>
+		console.log "Hello #{@name}!"
+
+bob = new User('bob')
+mary = new User('mary')
+
+log = (callback) ->
+
+	console.log "About to execute callback!"
+	callback()
+	console.log "Finished executing callback!"
+
+log(bob.sayHi)
+log(mary.sayHi)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

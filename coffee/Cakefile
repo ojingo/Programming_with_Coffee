@@ -1,0 +1,41 @@
+# my first CAKE file
+# cake is a build system like RAKE but for coffeescript
+# its written in coffeescript
+# task(nameOfTask, descriptionOFTask, functionToExecute() )
+
+
+# you must call the file Cakefile (I didn't read it carefully enough! dummy.)
+# then you run the command >cake to list all tasks
+# then you run cake <nameoftask> to get it to execute
+
+# options to a task must come BEFORE the task name - which is a bit backwards
+
+###
+option '-n', '--name [NAME]', 'name of greetee'
+
+task "greet", "Say hi to the nice people!", (options) ->
+	
+	throw new Error("[NAME] is required") unless options.name?
+
+	console.log "Hello, #{options.name}!!"
+###
+
+task "clean", "Cleaning up build directories", ->
+	console.log "Cleaning up....."
+
+task "build", "Building the project files", ->
+	console.log "Building files!!"
+
+task "package", "Clean + Build + Pack all files",  ->
+	invoke "clean"
+	invoke "build"
+	console.log "Packaging....!"
+
+
+
+
+
+
+
+
+
